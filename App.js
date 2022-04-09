@@ -43,8 +43,9 @@ const App: () => Node = () => {
       <StatusBar backgroundColor="pink" /> 
           <Text style={styles.style_ani} >Lubię różowy </Text>
           <Text style={styles.style_ani_2} >PINK</Text> 
-          <Text style={styles.style_ani_3} >2022 by Ania</Text>  
-
+          <Text style={styles.style_ani_3} >2022</Text>
+          <Text style={styles.style_ani_4} >by Ania</Text>  
+       
       </View>
   );
 
@@ -75,10 +76,17 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center'
   },
   style_ani_3: {
-    fontSize: 140,
+    fontSize: 100,
     textAlign: 'center',
     color: 'pink',
     fontWeight: '100',
+    textAlignVertical: 'center'
+  },
+  style_ani_4: {
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'pink',
+    fontWeight: '300',
     textAlignVertical: 'center'
   },
 
