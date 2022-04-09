@@ -43,7 +43,7 @@ const App: () => Node = () => {
       <StatusBar backgroundColor="pink" /> 
           <Text style={styles.style_ani} >Lubię różowy </Text>
           <Text style={styles.style_ani_2} >PINK</Text> 
-          <Text style={styles.style_ani_3} >2022</Text>  
+          <Text style={styles.style_ani_3} >2022 by Ania</Text>  
 
       </View>
   );
