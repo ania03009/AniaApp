@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View ,Button, TouchableOpacity } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-
-const buttonWithBackground = props => {
+const LinearGradientButton = props => {
    const content = (
-    <View style={[styles.button,{backgroundColor: props.color}]}>
-     <Text style={styles.text}>{props.text}</Text>
 
-     </View>
+    <LinearGradient colors={['#ef32d9','#89fffd']} style={styles.body}>
+     <Text style={styles.text}>{props.text}</Text>	
+</LinearGradient>
 
    )
 	 return<TouchableOpacity onPress={props.onPresss}>{content}</TouchableOpacity>
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
   },
 	text: {
-  color: 'gray',
+  color: 'white',
 	fontSize: 30
 
 	}
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
 
 
 });
-export default buttonWithBackground;
+export default LinearGradientButton;
