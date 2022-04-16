@@ -1,8 +1,10 @@
 import React from 'react';
 import type {Node} from 'react';
-import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, Button } from 'react-native';
+import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, Button, TouchableOpacity } from 'react-native';
 import {Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 import ButtonWithBackground from'./src/ButtonWithBackground';
+import LinearGradientButton from'./src/LinearGradientButton';
+
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -39,18 +41,28 @@ const App: () => Node = () => {
 
   return (
       <View style={styles.container}>
-      <StatusBar backgroundColor="pink" />
-      <ScrollView style={styles.style_scrolla}>
-        <ButtonWithBackground text='Login' color='pink'/> 
-        <Text style={styles.style_ani} >Lubię różowy </Text>
-        <Text style={styles.style_ani_2} >PINK</Text> 
-        <Text style={styles.style_ani_3} >2022</Text>
-        <Text style={styles.style_ani_4} >by Ania</Text>  
-        <Text style={styles.style_ani} >Lubię różowy </Text>
-        <Text style={styles.style_ani_2} >PINK</Text> 
-        <Text style={styles.style_ani_3} >2022</Text>
-        <Text style={styles.style_ani_4} >by Ania</Text>
-      </ScrollView>   
+
+        <StatusBar backgroundColor="pink" />
+
+			<ScrollView style={styles.style_scrolla}>
+
+
+
+				{/* <LinearGradientButton text='Login' /> */}
+
+				<ButtonWithBackground text='Login' color='pink'/>
+			
+				<Text style={styles.style_ani} >Lubię różowy </Text>
+				<Text style={styles.style_ani_2} >PINK</Text> 
+				<Text style={styles.style_ani_3} >2022</Text>
+				<Text style={styles.style_ani_4} >by Ania</Text>  
+				<Text style={styles.style_ani} >Lubię różowy </Text>
+				<Text style={styles.style_ani_2} >PINK</Text> 
+				<Text style={styles.style_ani_3} >2022</Text>
+				<Text style={styles.style_ani_4} >by Ania</Text>
+
+			</ScrollView>
+ 
       </View>
   );
 
@@ -61,6 +73,12 @@ const styles = StyleSheet.create({
     flex:1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  buttonText:{
+	padding: 16,
+    width: 200,
+    borderRadius: 20,
+		alignItems: 'center'
   },
   style_scrolla:{
     flex:1,
