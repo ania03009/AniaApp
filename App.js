@@ -4,69 +4,91 @@ import {SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, V
 import {Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 import ButtonWithBackground from'./src/ButtonWithBackground';
 import LinearGradientButton from'./src/LinearGradientButton';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+// const Section = ({children, title}): Node => {
+//   const isDarkMode = useColorScheme() === 'dark';
+//   return (
+//     <View style={styles.sectionContainer}>
+//       <Text
+//         style={[
+//           styles.sectionTitle,
+//           {
+//             color: isDarkMode ? Colors.white : Colors.black,
+//           },
+//         ]}>
+//         {title}
+//       </Text>
+//       <Text
+//         style={[
+//           styles.sectionDescription,
+//           {
+//             color: isDarkMode ? Colors.light : Colors.dark,
+//           },
+//         ]}>
+//         {children}
+//       </Text>
+//     </View>
+//   );
+// };
+
+// const App: () => Node = () => {
+//   const isDarkMode = useColorScheme() === 'dark';
+  
+//   const backgroundStyle = {
+//     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,  
+//   };
+
+//   return (
+//       <View style={styles.container}>
+
+//         <StatusBar backgroundColor="pink" />
+
+// 			<ScrollView style={styles.style_scrolla}>
 
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+
+// 				{/* <LinearGradientButton text='Login' /> */}
+
+// 				<ButtonWithBackground text='Login' color='pink'/>
+			
+// 				<Text style={styles.style_ani} >Lubię różowy </Text>
+// 				<Text style={styles.style_ani_2} >PINK</Text> 
+// 				<Text style={styles.style_ani_3} >2022</Text>
+// 				<Text style={styles.style_ani_4} >by Ania</Text>  
+// 				<Text style={styles.style_ani} >Lubię różowy </Text>
+// 				<Text style={styles.style_ani_2} >PINK</Text> 
+// 				<Text style={styles.style_ani_3} >2022</Text>
+// 				<Text style={styles.style_ani_4} >by Ania</Text>
+
+// 			</ScrollView>
+ 
+//       </View>
+//   );
+
+// };
+
+function HomeScreen() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
     </View>
   );
-};
+}
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-  
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,  
-  };
+const Stack = createNativeStackNavigator();
 
+export default function App() {
   return (
-      <View style={styles.container}>
-
-        <StatusBar backgroundColor="pink" />
-
-			<ScrollView style={styles.style_scrolla}>
-
-
-
-				{/* <LinearGradientButton text='Login' /> */}
-
-				<ButtonWithBackground text='Login' color='pink'/>
-			
-				<Text style={styles.style_ani} >Lubię różowy </Text>
-				<Text style={styles.style_ani_2} >PINK</Text> 
-				<Text style={styles.style_ani_3} >2022</Text>
-				<Text style={styles.style_ani_4} >by Ania</Text>  
-				<Text style={styles.style_ani} >Lubię różowy </Text>
-				<Text style={styles.style_ani_2} >PINK</Text> 
-				<Text style={styles.style_ani_3} >2022</Text>
-				<Text style={styles.style_ani_4} >by Ania</Text>
-
-			</ScrollView>
- 
-      </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
+}
 
-};
 
 const styles = StyleSheet.create({
   container:{
@@ -131,4 +153,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+
+// export default App;
